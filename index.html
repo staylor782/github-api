@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='github-api'>
+	<head>
+		<meta charset="UTF=8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body ng-controller='GitHubController'>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+        
+        <div>
+            <form>
+                <input ng-model='searchText' placeholder="Search users"/>
+                <button ng-click='getUserData()'>Search</button>
+            </form>
+        </div>
+        
+        <div ng-show='displayFields'>
+            <ul>
+                <li><img ng-src='{{user.avatar_url}}'/></li>
+                <li>User Name: {{user.login}}</li>
+                <li>Company: {{user.company}}</li>
+                <li>Email: {{user.email}}</li>
+                <li>Number of Repositories: {{user.repos_url}}</li>
+                <li>Followers: {{user.followers}}</li>
+                <li>Following: {{user.following}}</li>
+            </ul>
+        </div>
+        
+        <script src="app.js"></script>
+        <script src="controller.js"></script>
+        <script src="service.js"></script>
+	</body>
+</html>
